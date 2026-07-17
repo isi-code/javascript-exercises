@@ -3,7 +3,10 @@ const pascal = function(rows, arr = [1]) {
     return arr
 
   const newValuesArr = arr.map((num, idx) => {
-    const nextNum = (arr[idx+1] in arr) ? arr[idx+1] : 0;
+    let nextNum = arr[idx+1];
+    if (!nextNum)
+      nextNum = 0;
+
     return num + nextNum;
   });
 
